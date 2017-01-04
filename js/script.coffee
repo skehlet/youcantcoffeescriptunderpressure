@@ -89,7 +89,7 @@ class Game
 
     @_editor = ace.edit 'editor'
     @_editor.setTheme 'ace/theme/twilight'
-    @_editor.getSession().setMode 'ace/mode/coffee'
+    @_editor.getSession().setMode 'ace/mode/javascript'
     @_editor.getSession().setTabSize 2
 
     @_$game = $ '#game'
@@ -218,7 +218,10 @@ class Game
       @_stopTimer()
 
       try
-        bin = CoffeeScript.compile @_editor.getValue(), bare: true
+        # It works best to keep using the coffeescript compiler to verify the code.
+        # Surround javascript with backticks to specify that it's Embedded JavaScript
+        # http://coffeescript.org/#embedded
+        bin = CoffeeScript.compile "`#{@_editor.getValue()}`", bare: true
       catch e
         tmp = JSON.stringify(message: e.message).split(':')[1]
         tmp = tmp.slice 0, tmp.length - 1

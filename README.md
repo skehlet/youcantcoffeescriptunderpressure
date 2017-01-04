@@ -1,4 +1,8 @@
-# You Can't CoffeeScript Under Pressure
+# You Can't JavaScript Under Pressure
+
+This is just a small tweak to @shovon's You Can't CoffeeScript Under Pressure, which I made accept Javascript.
+
+Previous README:
 
 A CoffeeScript version of [Us Vs Th3m](https://www.facebook.com/Usvsth3m)'s ["You Can't JavaScript Under Pressure"](http://toys.usvsth3m.com/javascript-under-pressure/).
 
